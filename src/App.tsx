@@ -128,12 +128,12 @@ export default function App() {
   // Navigation Links definition
   const navLinks = [
     { titleAr: "الرئيسية", titleEn: "Home", href: "#" },
-    { titleAr: "مسارات ستيم", titleEn: "STEM Tracks", href: "#tracks" },
-    { titleAr: "ميثودولوجيا لايف", titleEn: "Live Method", href: "#why-stem" },
-    { titleAr: "صندوق المشاريع", titleEn: "Interactive Sandbox", href: "#projects" },
-    { titleAr: "الذكاء التفاعلي", titleEn: "Smart Chat Advisor", href: "#ai-assistant" },
-    { titleAr: "خطط الاشتراك", titleEn: "Subscription Tiers", href: "#plans" },
-    { titleAr: "الأسئلة الشائعة", titleEn: "FAQ", href: "#faq" },
+    { titleAr: "المسارات", titleEn: "STEM Tracks", href: "#tracks" },
+    { titleAr: "منهجية Live", titleEn: "Live Method", href: "#why-stem" },
+    { titleAr: "مختبر المشاريع", titleEn: "Interactive Sandbox", href: "#projects" },
+    { titleAr: "المستشار الذكي", titleEn: "Smart Chat Advisor", href: "#ai-assistant" },
+    { titleAr: "الباقات", titleEn: "Subscription Tiers", href: "#plans" },
+    { titleAr: "الأسئلة", titleEn: "FAQ", href: "#faq" },
   ];
 
   const handleLangToggle = () => {
@@ -146,26 +146,26 @@ export default function App() {
       dir={lang === "ar" ? "rtl" : "ltr"}
     >
       {/* 1. Header / Navigation Bar */}
-      <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-pink-100/60 shadow-xs">
+      <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-pink-100/60 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
           
           {/* Logo Brand area */}
           <a href="#" className="flex items-center gap-2 group">
             <img 
               src="/input_file_3.png" 
-              className="h-14 sm:h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105" 
+              className="h-12 sm:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105" 
               alt={lang === "ar" ? "منصة ستيم التعليمية" : "STEM Platform Logo"}
               referrerPolicy="no-referrer"
             />
           </a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-6 text-sm font-semibold text-gray-650">
+          <nav className="hidden lg:flex items-center gap-5 text-sm font-bold text-gray-600">
             {navLinks.map((link, idx) => (
               <a
                 key={idx}
                 href={link.href}
-                className="hover:text-pink-600 transition-colors uppercase tracking-wider px-1 py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 hover:after:w-full after:h-0.5 after:bg-pink-500 after:transition-all pointer-events-auto"
+                className="hover:text-pink-600 transition-colors px-1 py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 hover:after:w-full after:h-0.5 after:bg-pink-500 after:transition-all pointer-events-auto"
               >
                 {lang === "ar" ? link.titleAr : link.titleEn}
               </a>
@@ -178,10 +178,10 @@ export default function App() {
             <button
               type="button"
               onClick={handleLangToggle}
-              className="bg-white border border-pink-150 hover:bg-pink-50/50 text-gray-700 hover:text-slate-900 px-3.5 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 focus:outline-none cursor-pointer text-right lg:text-left"
+              className="bg-white border border-pink-100 hover:bg-pink-50/50 text-gray-700 hover:text-slate-900 px-3.5 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 focus:outline-none cursor-pointer text-right lg:text-left"
             >
               <Globe size={14} className="text-pink-500 shrink-0" />
-              <span>{lang === "ar" ? "English" : "العربية"}</span>
+              <span>{lang === "ar" ? "EN" : "AR"}</span>
             </button>
 
             {/* Support Number */}
@@ -189,7 +189,7 @@ export default function App() {
               href="https://wa.me/966500000000"
               target="_blank"
               rel="noreferrer noopener"
-              className="text-emerald-650 hover:text-emerald-700 font-bold text-xs flex items-center gap-1 bg-emerald-50 px-3 py-1.5 rounded-xl border border-emerald-100"
+              className="text-emerald-700 hover:text-emerald-800 font-bold text-xs flex items-center gap-1 bg-emerald-50 px-3 py-1.5 rounded-xl border border-emerald-100"
             >
               <Phone size={13} />
               <span>{lang === "ar" ? "تواصل واتساب" : "WhatsApp Support"}</span>
@@ -267,11 +267,7 @@ export default function App() {
       </header>
 
       {/* 2. Hero Section */}
-      <section className="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-32 bg-radial from-pink-500/10 via-amber-500/0 to-transparent">
-        
-        {/* Floating background decorative blobs */}
-        <div className="absolute top-1/4 left-1/10 w-48 h-48 bg-yellow-300/20 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-1/10 w-64 h-64 bg-pink-300/20 rounded-full blur-3xl"></div>
+      <section className="relative overflow-hidden pt-10 pb-16 lg:pt-16 lg:pb-24 bg-gradient-to-b from-amber-50 via-white to-slate-50">
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -282,16 +278,16 @@ export default function App() {
               {/* Badge item */}
               <div className="inline-flex items-center gap-1.5 bg-pink-500/10 text-pink-600 px-4 py-1.5 rounded-full text-xs font-black font-sans tracking-wide">
                 <Sparkles size={13} className="text-pink-500 fill-pink-500 animate-bounce" />
-                <span>{lang === "ar" ? "أول أكاديمية تفاعلية حية للأطفال والمدارس بالمملكة" : "Leading Interactive Live Academy for Kids"}</span>
+                <span>{lang === "ar" ? "تعلم مباشر للأطفال بهوية زرافة ستيم" : "Live, playful STEM learning for kids"}</span>
               </div>
 
               {/* Title display */}
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-950 tracking-tight leading-tight font-sans">
                 {lang === "ar" ? (
                   <>
-                    منصة ستيم التعليمية:{" "}
+                    منصة ستيم التعليمية{" "}
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-rose-600 to-amber-500 block sm:inline">
-                      مهارات القرن الحادي والعشرين
+                      بثقة ومتعة
                     </span>
                   </>
                 ) : (
@@ -307,7 +303,7 @@ export default function App() {
               {/* Subtitle description */}
               <p className="text-base sm:text-lg text-gray-600 leading-relaxed font-sans max-w-2xl mx-auto lg:mx-0">
                 {lang === "ar"
-                  ? "نلهم عقول اليوم.. لنبني مهارات الغد من خلال حصص تفاعلية مباشرة عبر زووم (Live) ومسارات تعليمية ممتعة للتطوير المنطقي والنهوض بالحس اللغوي والرياضي."
+                  ? "حصص مباشرة ومسارات قصيرة تساعد الطفل على فهم الرياضيات، اللغة، البرمجة، والتفكير العلمي بتجربة مرئية لطيفة وواضحة."
                   : "We inspire today's minds to craft tomorrow's capabilities. Engaging live Zoom classrooms, custom pathways, and interactive logic coaching."}
               </p>
 
@@ -315,16 +311,16 @@ export default function App() {
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
                 <a
                   href="#plans"
-                  className="w-full sm:w-auto text-center bg-gradient-to-r from-pink-500 via-rose-500 to-rose-600 hover:from-pink-600 hover:to-rose-700 text-white font-black text-sm py-4 px-10 rounded-2xl shadow-xl hover:shadow-pink-500/25 transition-all hover:-translate-y-0.5 transform tracking-wider pointer-events-auto animate-pulse"
+                  className="w-full sm:w-auto text-center bg-gradient-to-r from-pink-500 via-rose-500 to-rose-600 hover:from-pink-600 hover:to-rose-700 text-white font-black text-sm py-4 px-10 rounded-2xl shadow-xl hover:shadow-pink-500/25 transition-all hover:-translate-y-0.5 transform tracking-wider pointer-events-auto"
                 >
-                  {lang === "ar" ? "اشترك الآن" : "Enroll Now"}
+                  {lang === "ar" ? "احجز مقعد الطفل" : "Enroll Now"}
                 </a>
 
                 <a
                   href="#tracks"
                   className="w-full sm:w-auto text-center bg-white border border-pink-100 hover:bg-pink-50/40 text-gray-700 font-bold text-sm py-4 px-8 rounded-2xl shadow transition-colors pointer-events-auto"
                 >
-                  {lang === "ar" ? "استكشف المسارات التعليمية" : "Explore Academic Tracks"}
+                  {lang === "ar" ? "استكشف المسارات" : "Explore Academic Tracks"}
                 </a>
               </div>
 
@@ -333,19 +329,19 @@ export default function App() {
                 <div className="bg-white/80 p-3 rounded-2xl border border-pink-50">
                   <span className="text-2xl sm:text-3xl font-black text-gray-950 font-mono block text-pink-600">98%</span>
                   <span className="text-xs text-gray-500 font-medium">
-                    {lang === "ar" ? "سعادت ورضا الأمهات" : "Parent Satisfaction"}
+                    {lang === "ar" ? "رضا الأسر" : "Parent Satisfaction"}
                   </span>
                 </div>
                 <div className="bg-white/80 p-3 rounded-2xl border border-pink-50">
                   <span className="text-2xl sm:text-3xl font-black text-gray-950 font-mono block text-amber-600">350+</span>
                   <span className="text-xs text-gray-500 font-medium">
-                    {lang === "ar" ? "مثال ومسألة عملية ممتعة" : "Interactive Exercises"}
+                    {lang === "ar" ? "نشاط وتحدي" : "Interactive Exercises"}
                   </span>
                 </div>
                 <div className="bg-white/80 p-3 rounded-2xl border border-pink-50">
                   <span className="text-2xl sm:text-3xl font-black text-gray-950 font-mono block text-pink-600">1:4</span>
                   <span className="text-xs text-gray-500 font-medium">
-                    {lang === "ar" ? "نصاب الطلاب لكل فصل" : "Max Ratio (1:4)"}
+                    {lang === "ar" ? "طلاب لكل مجموعة" : "Max Ratio (1:4)"}
                   </span>
                 </div>
               </div>
@@ -371,7 +367,7 @@ export default function App() {
                 <div className="flex-1 flex flex-col justify-center items-center relative z-10 py-6">
                   
                   {/* Glowing core light behind customized mascot */}
-                  <div className="absolute w-40 h-40 bg-yellow-405/25 blur-3xl rounded-full"></div>
+                  <div className="absolute w-40 h-40 bg-yellow-400/25 blur-3xl rounded-full"></div>
 
                   {/* High quality mascot container */}
                   <div className="relative transform hover:scale-105 transition-all duration-300">
@@ -571,7 +567,7 @@ export default function App() {
                     {lang === "ar" ? "مسار اللغة الإنجليزية والطلاقة الصوتية" : "Modern English Phonics & Public Speaking"}
                   </h3>
                   
-                  <p className="text-xs sm:text-sm text-gray-650 leading-relaxed font-sans">
+                  <p className="text-xs sm:text-sm text-gray-600 leading-relaxed font-sans">
                     {lang === "ar"
                       ? "نركّز على كسر الخوف الطبيعي والتردد عند التكلم بالإنجليزية لدى الأطفال عبر ميثودولوجيا فونوغرافية (Phonics) حسية وعالمية. يكتسب طفلك مخارج الأحرف واللفظ السليم ويغوص بحكايات كرتونية مبهجة ليتعلم محادثة الطلاقة بوعي."
                       : "Construct conversational confidence using Phonics strategies. Interactive stories and small group zoom classes."}
@@ -1189,7 +1185,7 @@ export default function App() {
                   <button
                     type="button"
                     onClick={() => toggleFaq(faq.id)}
-                    className="w-full text-left font-black text-xs sm:text-sm text-gray-900 py-4.5 px-5 flex justify-between items-center bg-transparent cursor-pointer pointer-events-auto"
+                    className="w-full text-left font-black text-xs sm:text-sm text-gray-900 py-4 px-5 flex justify-between items-center bg-transparent cursor-pointer pointer-events-auto"
                   >
                     <span className="text-gray-950 text-left">
                       {lang === "ar" ? faq.questionAr : faq.questionEn}
@@ -1228,16 +1224,16 @@ export default function App() {
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
               href="#plans"
-              className="w-full sm:w-auto text-center bg-slate-900 hover:bg-slate-950 text-white font-black text-sm py-4.5 px-10 rounded-2xl shadow-2xl transition-all flex items-center justify-center gap-2"
+              className="w-full sm:w-auto text-center bg-slate-900 hover:bg-slate-950 text-white font-black text-sm py-4 px-10 rounded-2xl shadow-2xl transition-all flex items-center justify-center gap-2"
             >
-              <Target size={15} className="text-yellow-405 animate-pulse shrink-0" />
+              <Target size={15} className="text-yellow-400 animate-pulse shrink-0" />
               <span>{lang === "ar" ? "اشترك الآن بالباقة" : "Enroll & Subscribe Today"}</span>
             </a>
             <a
               href="https://wa.me/966500000000"
               target="_blank"
               rel="noreferrer noopener"
-              className="w-full sm:w-auto text-center bg-white/11 hover:bg-white/20 text-white font-black text-sm py-4.5 px-8 rounded-2xl transition-all border border-white/20 flex items-center justify-center gap-2"
+              className="w-full sm:w-auto text-center bg-white/10 hover:bg-white/20 text-white font-black text-sm py-4 px-8 rounded-2xl transition-all border border-white/20 flex items-center justify-center gap-2"
             >
               <Phone size={15} />
               {lang === "ar" ? "تواصل معنا مباشرة" : "Call WhatsApp Line"}
@@ -1397,12 +1393,12 @@ export default function App() {
                           {lang === "ar" ? checkoutPlan.nameAr : checkoutPlan.nameEn}
                         </h5>
                       </div>
-                      <span className="font-mono text-lg font-black text-white bg-white/11 px-3 py-1 rounded-lg">
+                      <span className="font-mono text-lg font-black text-white bg-white/10 px-3 py-1 rounded-lg">
                         {lang === "ar" ? checkoutPlan.priceAr : checkoutPlan.priceEn}
                       </span>
                     </div>
 
-                    <div className="text-xs text-slate-300 leading-relaxed font-sans border-t border-white/11 pt-2 flex items-center gap-1.5">
+                    <div className="text-xs text-slate-300 leading-relaxed font-sans border-t border-white/10 pt-2 flex items-center gap-1.5">
                       <Sparkles size={12} className="text-yellow-400 shrink-0" />
                       <span>{lang === "ar" ? checkoutPlan.sessionsAr : checkoutPlan.sessionsEn}</span>
                     </div>
@@ -1414,7 +1410,7 @@ export default function App() {
                     {/* Basic Parent Data */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
                       <div>
-                        <label className="block text-gray-650 font-bold mb-1">
+                        <label className="block text-gray-600 font-bold mb-1">
                           {lang === "ar" ? "اسم ولي الأمر الكريم:" : "Parent Name:"}
                         </label>
                         <input
@@ -1425,7 +1421,7 @@ export default function App() {
                         />
                       </div>
                       <div>
-                        <label className="block text-gray-650 font-bold mb-1">
+                        <label className="block text-gray-600 font-bold mb-1">
                           {lang === "ar" ? "اسم البطل الصقر وعمره:" : "Child Name & Age:"}
                         </label>
                         <input
@@ -1439,7 +1435,7 @@ export default function App() {
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
                       <div>
-                        <label className="block text-gray-650 font-bold mb-1">
+                        <label className="block text-gray-600 font-bold mb-1">
                           {lang === "ar" ? "رقم الجوال لتلقي التقرير (واتساب):" : "WhatsApp Number:"}
                         </label>
                         <input
@@ -1451,7 +1447,7 @@ export default function App() {
                         />
                       </div>
                       <div>
-                        <label className="block text-gray-650 font-bold mb-1">
+                        <label className="block text-gray-600 font-bold mb-1">
                           {lang === "ar" ? "مخاوف أو رغبات تفضيلية بالطفل:" : "Specific concerns/interests:"}
                         </label>
                         <input
@@ -1484,7 +1480,7 @@ export default function App() {
                         </button>
                       </div>
                       {promoApplied && (
-                        <p className="text-[10px] text-emerald-650 font-bold mt-1.5 animate-bounce">
+                        <p className="text-[10px] text-emerald-700 font-bold mt-1.5 animate-bounce">
                           ✓ {lang === "ar" ? `تم التطبيق! تم خصم 10% بنجاح على الفاتورة.` : `Succesfully applied! 10% discount detected.`}
                         </p>
                       )}
@@ -1498,7 +1494,7 @@ export default function App() {
                       </div>
 
                       <div className="text-xs">
-                        <label className="block text-gray-650 font-bold mb-1">
+                        <label className="block text-gray-600 font-bold mb-1">
                           {lang === "ar" ? "رقم البطاقة (مدى / فيزا / ماستركارد):" : "Card Number (Mada/Visa):"}
                         </label>
                         <input
@@ -1514,7 +1510,7 @@ export default function App() {
 
                       <div className="grid grid-cols-2 gap-3 text-xs">
                         <div>
-                          <label className="block text-gray-650 font-bold mb-1">
+                          <label className="block text-gray-600 font-bold mb-1">
                             {lang === "ar" ? "تاريخ الانتهاء المطبوع:" : "Expiry Date:"}
                           </label>
                           <input
@@ -1528,7 +1524,7 @@ export default function App() {
                           />
                         </div>
                         <div>
-                          <label className="block text-gray-650 font-bold mb-1">
+                          <label className="block text-gray-600 font-bold mb-1">
                             {lang === "ar" ? "الرقم السري (CVV):" : "Security Code (CVV):"}
                           </label>
                           <input

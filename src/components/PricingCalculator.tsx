@@ -239,7 +239,7 @@ export default function PricingCalculator({ plans, lang, onOpenCheckout }: Prici
               </div>
 
               {results.frequencyDiscount > 0 && (
-                <div className="flex justify-between text-emerald-650 pt-2.5 font-bold">
+                <div className="flex justify-between text-emerald-700 pt-2.5 font-bold">
                   <span className="flex items-center gap-1">
                     <Sparkles size={11} className="text-emerald-500" />
                     {lang === "ar" ? "خصم الدفع السنوي المسبق (20%):" : "Prepaid Annual Disc (20%):"}
@@ -251,7 +251,7 @@ export default function PricingCalculator({ plans, lang, onOpenCheckout }: Prici
               )}
 
               {results.familyDiscount > 0 && (
-                <div className="flex justify-between text-emerald-650 pt-2.5 font-bold">
+                <div className="flex justify-between text-emerald-700 pt-2.5 font-bold">
                   <span className="flex items-center gap-1">
                     <Sparkles size={11} className="text-emerald-500" />
                     {lang === "ar" ? "خصم الأشقاء العائلي المتكامل:" : "Family Siblings Discount:"}
