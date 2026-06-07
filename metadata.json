@@ -1,0 +1,6 @@
+{
+  "name": "منصة ستيم التعليمية",
+  "description": "منصة ستيم التعليمية للطفل العربي: نلهم عقول اليوم لنبني مهارات الغد بحصص تفاعلية ومسارات ممتعة وشاملة.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

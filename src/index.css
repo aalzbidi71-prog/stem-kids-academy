@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Fredoka:wght@300..700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Cairo", "Fredoka", system-ui, -apple-system, sans-serif;
+  --font-display: "Fredoka", "Cairo", sans-serif;
+  --font-english: "Fredoka", sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #fcfcfd;
+}
+
+.font-english {
+  font-family: "Fredoka", sans-serif;
+}
+
+/* Rounded, friendly hover transitions */
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
+/* Beautiful soft shadow variants */
+.shadow-premium {
+  box-shadow: 0 4px 20px -2px rgba(244, 63, 94, 0.06), 0 2px 8px -1px rgba(0, 0, 0, 0.02);
+}
+
+.shadow-premium-hover {
+  box-shadow: 0 12px 30px -4px rgba(244, 63, 94, 0.12), 0 4px 12px -2px rgba(0, 0, 0, 0.03);
+}
