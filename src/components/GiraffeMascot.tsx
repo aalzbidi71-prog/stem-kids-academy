@@ -19,56 +19,23 @@ const poseNames: Record<GiraffeMascotProps["pose"], string> = {
   10: "شعار منصة ستيم التعليمية",
 };
 
-function getSpriteConfig(pose: GiraffeMascotProps["pose"]) {
-  if (pose >= 1 && pose <= 5) {
-    const offsets = {
-      1: "-200%",
-      2: "-400%",
-      3: "0%",
-      4: "-100%",
-      5: "-300%",
-    } as const;
-
-    return {
-      src: "/input_file_1.png",
-      width: "500%",
-      left: offsets[pose as 1 | 2 | 3 | 4 | 5],
-    };
-  }
-
-  if (pose >= 6 && pose <= 8) {
-    const offsets = {
-      6: "-100%",
-      7: "0%",
-      8: "-200%",
-    } as const;
-
-    return {
-      src: "/input_file_0.png",
-      width: "300%",
-      left: offsets[pose as 6 | 7 | 8],
-    };
-  }
-
-  if (pose === 10) {
-    return {
-      src: "/input_file_3.png",
-      width: "100%",
-      left: "0%",
-    };
-  }
-
-  return {
-    src: "/input_file_2.png",
-    width: "100%",
-    left: "0%",
-  };
-}
+const poseSources: Record<GiraffeMascotProps["pose"], string> = {
+  1: "/mascot_pose_1.png",
+  2: "/mascot_pose_2.png",
+  3: "/mascot_pose_3.png",
+  4: "/mascot_pose_4.png",
+  5: "/mascot_pose_5.png",
+  6: "/mascot_pose_6.png",
+  7: "/mascot_pose_7.png",
+  8: "/mascot_pose_8.png",
+  9: "/mascot_pose_9.png",
+  10: "/mascot_pose_10.png",
+};
 
 export default function GiraffeMascot({ pose, className = "w-32 h-32", alt }: GiraffeMascotProps) {
   const containerId = useId();
   const [imageError, setImageError] = useState(false);
-  const sprite = getSpriteConfig(pose);
+  const imageSrc = poseSources[pose];
 
   if (imageError) {
     return (
@@ -89,14 +56,10 @@ export default function GiraffeMascot({ pose, className = "w-32 h-32", alt }: Gi
       className={`relative inline-block overflow-hidden rounded-2xl ${className}`}
     >
       <img
-        src={sprite.src}
+        src={imageSrc}
         alt={alt || poseNames[pose]}
         onError={() => setImageError(true)}
-        className="absolute top-0 h-full max-w-none select-none transition-transform duration-300 hover:scale-105"
-        style={{
-          width: sprite.width,
-          left: sprite.left,
-        }}
+        className="h-full w-full select-none object-contain transition-transform duration-300 hover:scale-105"
         draggable={false}
       />
     </div>
